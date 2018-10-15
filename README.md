@@ -1,13 +1,17 @@
 # tomee-mp-metrics-examples
 
-#Run
+# Run
+
         mvn clean install tomee:run
 
-#Test request:
+# Test request
+
         curl http://localhost:8181/services/api/greeting
 
-#Metrics endpoint
+# Metrics endpoint
+  
          curl   http://localhost:8181/services/api/metrics
 
-#Counter metric endpoint
+# Counter metric endpoint
+  
           curl  http://localhost:8181/services/api/metrics/application/cesar
