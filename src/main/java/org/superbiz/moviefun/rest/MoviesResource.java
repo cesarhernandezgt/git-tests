@@ -18,15 +18,17 @@ package org.superbiz.moviefun.rest;
 
 import org.eclipse.microprofile.metrics.annotation.Counted;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
 @Path("greeting")
 @Produces({"application/json"})
+@ApplicationScoped
 public class MoviesResource {
 
-    @Counted(name = "cesar", absolute = true, monotonic = true)
+    @Counted(name = "cesar", absolute = true)
     @GET
     public String message() {
         return "Hi Microprofile JWT!";
