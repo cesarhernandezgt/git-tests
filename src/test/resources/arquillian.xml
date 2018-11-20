@@ -34,6 +34,8 @@
 
       <property name="dir">target/server</property>
       <property name="appWorkingDir">target/arquillian</property>
+
+      <property name="classifier">microprofile</property>
     </configuration>
   </container>
 </arquillian>

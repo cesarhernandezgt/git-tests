@@ -28,71 +28,13 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <tomee.version>8.0.0-RC2-SNAPSHOT</tomee.version>
+    <tomee.version>8.0.0-SNAPSHOT</tomee.version>
     <version.shrinkwrap.resolver>2.0.0</version.shrinkwrap.resolver>
-    <mp-metric.version>1.1</mp-metric.version>
+    <mp-metric.version>1.0</mp-metric.version>
   </properties>
 
 
 
-  <repositories>
-    <repository>
-      <id>apache.snapshots.https</id>
-      <name>Apache Development Snapshot Repository</name>
-      <url>https://repository.apache.org/content/repositories/snapshots</url>
-    </repository>
-    <repository>
-      <id>apache-m2-snapshot</id>
-      <name>Apache Snapshot Repository</name>
-      <url>https://repository.apache.org/content/groups/snapshots</url>
-    </repository>
-    <repository>
-      <id>tomitribe-public</id>
-      <name>Tomitribe Releases Public</name>
-      <url>https://repository.tomitribe.com/content/repositories/releases</url>
-    </repository>
-  </repositories>
-
-  <pluginRepositories>
-    <pluginRepository>
-      <id>apache.snapshots.https</id>
-      <name>Apache Development Snapshot Repository</name>
-      <url>https://repository.apache.org/content/repositories/snapshots</url>
-    </pluginRepository>
-    <pluginRepository>
-      <id>apache-m2-snapshot</id>
-      <name>Apache Snapshot Repository</name>
-      <url>https://repository.apache.org/content/groups/snapshots</url>
-    </pluginRepository>
-    <pluginRepository>
-      <id>tomitribe-public</id>
-      <name>Tomitribe Releases Public</name>
-      <url>https://repository.tomitribe.com/content/repositories/releases</url>
-    </pluginRepository>
-  </pluginRepositories>
-
-  <profiles>
-    <profile>
-      <id>arquillian-tomee-embedded</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>org.apache.tomee</groupId>
-          <artifactId>arquillian-tomee-embedded</artifactId>
-          <version>${tomee.version}</version>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.apache.tomee</groupId>
-          <artifactId>tomee-embedded</artifactId>
-          <version>${tomee.version}</version>
-          <scope>test</scope>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
 
   <build>
     <defaultGoal>install</defaultGoal>
@@ -145,9 +87,8 @@
         <version>${tomee.version}</version>
         <configuration>
           <tomeeClassifier>microprofile</tomeeClassifier>
-          <tomeeHttpPort>8181</tomeeHttpPort>
           <args>-Xmx512m -XX:PermSize=256m</args>
-          <!--<config>${project.basedir}/src/main/tomee/</config>-->
+          <context>${artifactId}</context>
         </configuration>
       </plugin>
     </plugins>
@@ -179,7 +120,7 @@
     <dependency>
       <groupId>org.apache.tomee</groupId>
       <artifactId>javaee-api</artifactId>
-      <version>8.0-SNAPSHOT</version>
+      <version>8.0</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -200,14 +141,6 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.apache.tomee</groupId>
-      <artifactId>apache-tomee</artifactId>
-      <version>${tomee.version}</version>
-      <scope>test</scope>
-      <classifier>microprofile</classifier>
-      <type>zip</type>
-    </dependency>
-    <dependency>
       <groupId>org.apache.cxf</groupId>
       <artifactId>cxf-rt-rs-client</artifactId>
       <version>3.3.0-SNAPSHOT</version>
@@ -217,6 +150,20 @@
       <groupId>org.eclipse.microprofile.metrics</groupId>
       <artifactId>microprofile-metrics-api</artifactId>
       <version>${mp-metric.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tomee</groupId>
+      <artifactId>arquillian-tomee-remote</artifactId>
+      <version>${tomee.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tomee</groupId>
+      <artifactId>apache-tomee</artifactId>
+      <version>${tomee.version}</version>
+      <scope>test</scope>
+      <classifier>microprofile</classifier>
+      <type>zip</type>
     </dependency>
   </dependencies>
 </project>

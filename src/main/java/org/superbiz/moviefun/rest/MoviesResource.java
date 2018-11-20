@@ -28,7 +28,7 @@ import javax.ws.rs.Produces;
 @ApplicationScoped
 public class MoviesResource {
 
-    @Counted(name = "cesar", absolute = true)
+    @Counted(name = "my_custom_metric", absolute = true)
     @GET
     public String message() {
         return "Hi Microprofile JWT!";
