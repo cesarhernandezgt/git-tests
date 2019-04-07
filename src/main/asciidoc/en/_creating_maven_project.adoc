@@ -1,0 +1,91 @@
+== Creating Base Project Structure
+ifndef::sourcedir[:sourcedir: ../resources]
+
+
+=== Create a Maven project
+On a terminal execute the following command:
+
+[source, bash]
+----
+include::{sourcedir}/bash_instructions.sh[tags=mvn, indent=0]
+----
+
+On a terminal `cd` into the generated folder:
+
+[source, bash]
+----
+include::{sourcedir}/bash_instructions.sh[tags=cd, indent=0]
+----
+
+The generated folder structure should look like this:
+
+[source, bash]
+----
+include::{sourcedir}/bash_instructions.sh[tags=initial-tree, indent=0]
+----
+
+The `pom.xml` file contains at this point the basic project structure.
+
+
+=== Add Asciidoctor to the project
+On a text editor, open the `pom.xml` file and add the following sections:
+
+* Update the `<properties>` section with the following content:
+
+[source, xml]
+----
+include::{sourcedir}/pom.xml[tags=pom-properties, indent=3]
+----
+
+* In the `<build>` section, add the following content after the `</pluginManagement>` tag:
+
+[source, xml]
+----
+include::{sourcedir}/pom.xml[tags=pom-plugins, indent=3]
+----
+<1> Reference to `asciidoctor-maven-plugin`.
+<2> Dependencies used by the `asciidoctor-maven-plugin`.
+<3> Provides PDF export capabilities to the project.
+<4> Configuration for HTML export.
+<5> Configuration for PDF export.
+<6> Global configuration for both executions.
+
+
+=== Create your first AsciiDoc file
+
+* Create the default AsciiDoc folder:
+
+[source, bash]
+----
+include::{sourcedir}/bash_instructions.sh[tags=mkdir-asciidoc, indent=3]
+----
+
+* Inside `src/main/asciidoc` folder create the file `index_en.adoc` with the following content:
+
+[source%linenums, text]
+----
+include::{sourcedir}/bash_instructions.sh[tags=index-en-header, indent=3]
+----
+<1> Set the document main Header.
+<2> Removes from the document the auto generated header.
+<3> Author name.
+<4> Maps the project version and revision date from the `pom.xml` file.
+<4> Set the first document sub header.
+
+
+=== Generate your first HTML and PDF files
+
+* On a terminal execute the following command:
+
+[source, bash]
+----
+include::{sourcedir}/bash_instructions.sh[tags=mvn-clean-generate, indent=3]
+----
+
+* The following files will be generated under the folder `target/generated-docs/`
+** `index_en.html`
+** `index_en.pdf`
+
+The generated html version should look similar to:
+
+image::en/image_1.jpg[image, 660, 450]

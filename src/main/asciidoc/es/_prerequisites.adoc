@@ -1,0 +1,4 @@
+== Prerequisitos
+
+* Java Development Kit >= 7
+* Maven >= 3.3.9

@@ -1,0 +1,93 @@
+== Crear la estructura base del proyecto
+ifndef::sourcedir[:sourcedir: ../resources]
+
+
+=== Crear un nuevop proyecto con Maven
+En una terminal ejecutar el siguiente comando:
+
+[source, bash]
+----
+include::{sourcedir}/bash_instructions.sh[tags=mvn, indent=0]
+----
+
+En una termainl `cd` en el directorio generado en el paso anterior:
+
+[source, bash]
+----
+include::{sourcedir}/bash_instructions.sh[tags=cd, indent=0]
+----
+
+La estructura de diretorios generados debe ser igual a esta:
+
+[source, bash]
+----
+include::{sourcedir}/bash_instructions.sh[tags=initial-tree, indent=0]
+----
+
+El archivo `pom.xml` contiene la información básica del proyecto recien creado.
+
+
+=== Agregar Asciidoctor al proyecto
+En un editor de texto, abrir el archivo `pom.xml` y realizar las siguiente modificaciones:
+
+* Actualizar la sección `<properties>` con el siguiente contenido:
+
+[source, xml]
+----
+include::{sourcedir}/pom.xml[tags=pom-properties, indent=3]
+----
+
+* En la sección `<build>`, agregar el siguiente contenido despues de la etiqueta: `</pluginManagement>`
+
+[source, xml]
+----
+include::{sourcedir}/pom.xml[tags=pom-plugins, indent=3]
+----
+<1> Referencia al plugin `asciidoctor-maven-plugin`.
+<2> Dependencias utilizadas por el plugin `asciidoctor-maven-plugin`.
+<3> Provee PDF export al proyecto.
+<4> Configuración para reportes en formato HTML.
+<5> Configuración para reportes en formato PDF.
+<6> Configuración gobal para ambos executions.
+
+
+=== Creación de tu primer documento AsciiDoc
+
+* Crea el directorio por defecto de donde almacenaras tus archivos AsciiDoc (.adoc):
+
+[source, bash]
+----
+include::{sourcedir}/bash_instructions.sh[tags=mkdir-asciidoc, indent=3]
+----
+
+* Dentro del directorio `src/main/asciidoc` crea un archivo con nombre `index_en.adoc` y agrega el siguiente contenido:
+
+[source%linenums,text]
+----
+include::{sourcedir}/bash_instructions.sh[tags=index-es-header, indent=3]
+----
+<1> Define el encabezado y nombre principal del documento.
+<2> Remueve del documento el pie de página que se genera por defecto.
+<3> Sobre escribe el valor por defecto (Table content) del título de la tabla de contenidos.
+<4> Nombre del autor del documento.
+<5> Mapeo de la versión y fecha de revisión del documento obtenido a partir del archivo `pom.xml`.
+<6> Indica el primer sub encabezado del documento.
+
+CAUTION: Debes respetar que antes del header principal no haya texto, esto ayuda a que durante el proceso de renderización los parámtetros del documento (líneas 2 a la 5) sean efectivos.
+
+=== Generación de tu primer documento en formatos HTML y PDF
+
+* En la terminal ejecuta el siguiente comando:
+
+[source, bash]
+----
+include::{sourcedir}/bash_instructions.sh[tags=mvn-clean-generate, indent=3]
+----
+
+* Los archivos para cada formato se generan en el folder: `target/generated-docs/`
+** `index_en.html`
+** `index_en.pdf`
+
+La version html generada es similiar a la siguiente imagen:
+
+image::es/image_1.jpg[image, 660, 450]

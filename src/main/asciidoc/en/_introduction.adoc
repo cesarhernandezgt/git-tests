@@ -1,0 +1,3 @@
+== Introduction
+
+This tutorial shows how to start a Java Maven project from scratch and built all the necessary structure to have Asciidoctor capabilities along with spell checking for different languages as part of the project tests.
