@@ -1,4 +1,4 @@
-[![Build Status](https://api.travis-ci.org/cesarhernandezgt/book-demo-asciidoctor.png)](https://api.travis-ci.org/repositories/cesarhernandezgt/book-demo-asciidoctor)
+[![Build Status](https://api.travis-ci.org/cesarhernandezgt/book-demo-asciidoctor.png)](https://api.travis-ci.org/repositories/cesarhernandezgt/book-demo-asciidoctor) [![Join the chat at https://gitter.im/book-demo-asciidoctor/community](https://badges.gitter.im/book-demo-asciidoctor/community.svg)](https://gitter.im/book-demo-asciidoctor/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 This tutorial shows how to:
  * Start a Java Maven project from scratch 
