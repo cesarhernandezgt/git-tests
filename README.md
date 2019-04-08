@@ -1,4 +1,4 @@
-[![Build Status](https://api.travis-ci.org/cesarhernandezgt/book-demo-asciidoctor.png)](https://api.travis-ci.org/repositories/cesarhernandezgt/book-demo-asciidoctor)
+[![Build Status](https://api.travis-ci.org/cesarhernandezgt/book-demo-asciidoctor.png)](https://travis-ci.org/cesarhernandezgt/book-demo-asciidoctor)
 
 This tutorial shows how to:
  * Start a Java Maven project from scratch 
