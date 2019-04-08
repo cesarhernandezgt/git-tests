@@ -24,4 +24,4 @@ notifications:
       - $GITTER_WEBHOOK_URL # Set in the Travis settings page of your repository, as a secure variable
     on_success: always  # options: [always|never|change] default: always
     on_failure: always  # options: [always|never|change] default: always
-    on_start: never     # options: [always|never|change] default: always
+    on_start: always     # options: [always|never|change] default: always
