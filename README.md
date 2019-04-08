@@ -26,7 +26,10 @@ This tutorial shows how to:
 Generated files can be found in `target/generated-docs`
 
 ## Travis CI
-The project is configured with Travis CI to deploy the website: https://cesarhernandezgt.github.io/book-demo-asciidoctor/
+The project is configured with Travis CI to deploy the website: 
+[https://cesarhernandezgt.github.io/book-demo-asciidoctor/](https://cesarhernandezgt.github.io/book-demo-asciidoctor)
+
+
 
 `.travis.yml` contains the configuration to execute the following tasks: 
  
@@ -35,4 +38,4 @@ The project is configured with Travis CI to deploy the website: https://cesarher
 3. Deploy Github Pages base on the content of `target/generated-docs`
 4. Notify
    
-Travis dashboard: https://travis-ci.org/cesarhernandezgt/book-demo-asciidoctor
+Travis dashboard: [https://travis-ci.org/cesarhernandezgt/book-demo-asciidoctor](https://travis-ci.org/cesarhernandezgt/book-demo-asciidoctor)
