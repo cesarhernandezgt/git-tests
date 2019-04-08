@@ -139,6 +139,7 @@
         <!--Global configuraiton for both executions-->
         <configuration>
           <!--<imagesDir>../resources/images</imagesDir>-->
+          <outputDirectory>${project.basedir}</outputDirectory>
           <attributes>
             <project-version>${project.version}</project-version>
             <revdate>${maven.build.timestamp}</revdate>
