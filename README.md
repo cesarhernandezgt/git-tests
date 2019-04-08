@@ -1,19 +1,38 @@
 [![Build Status](https://api.travis-ci.org/cesarhernandezgt/book-demo-asciidoctor.png)](https://api.travis-ci.org/repositories/cesarhernandezgt/book-demo-asciidoctor)
 
-This tutorial shows how to start a Java Maven project from scratch and built all the necessary structure to have Asciidoctor capabilities
+This tutorial shows how to:
+ * Start a Java Maven project from scratch 
+ * Add Asciidoctor capabilities
+ * Add Github pages configuration
+ * Add Travis CI configuration 
+     * Build and test the project on each commit or Pull Request.
+     * Automatic deployment of the Github Pages website. 
 
 
-## Live DEMO (English)
-* [html](https://cesarhernandezgt.github.io/book-demo-asciidoctor/tutorial_en.html)
-* [pdf](https://cesarhernandezgt.github.io/book-demo-asciidoctor/tutorial_en.pdf)
+## Live DEMO
 
+* English 
+[[html]](https://cesarhernandezgt.github.io/book-demo-asciidoctor/tutorial_en.html)
+[[pdf]](https://cesarhernandezgt.github.io/book-demo-asciidoctor/tutorial_en.pdf)
 
-## Demo en vivo (Español)
-* [html](https://cesarhernandezgt.github.io/book-demo-asciidoctor/tutorial_es.html)
-* [pdf](https://cesarhernandezgt.github.io/book-demo-asciidoctor/tutorial_es.pdf)
+* Spanish 
+[[html]](https://cesarhernandezgt.github.io/book-demo-asciidoctor/tutorial_es.html)
+[[pdf]](https://cesarhernandezgt.github.io/book-demo-asciidoctor/tutorial_es.pdf)
 
 ## Build locally
 
         mvn clean install
         
 Generated files can be found in `target/generated-docs`
+
+## Travis CI
+The project is configured with Travis CI to deploy the website: https://cesarhernandezgt.github.io/book-demo-asciidoctor/
+
+`.travis.yml` contains the configuration to execute the following tasks: 
+ 
+1. Build and test the project on each commit or Pull Request.
+2. Copy the content Github Pages configuration files into `target/generated-docs`
+3. Deploy Github Pages base on the content of `target/generated-docs`
+4. Notify
+   
+Travis dashboard: https://travis-ci.org/cesarhernandezgt/book-demo-asciidoctor
