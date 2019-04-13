@@ -40,3 +40,11 @@ The project is configured with Travis CI to deploy the website:
 4. Notify
 
 Travis dashboard: [https://travis-ci.org/cesarhernandezgt/book-demo-asciidoctor](https://travis-ci.org/cesarhernandezgt/book-demo-asciidoctor)
+
+
+## Technologies
+* Java
+* maven
+* Asciidoctor
+* Travis
+* Github pages
